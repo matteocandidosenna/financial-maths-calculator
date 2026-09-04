@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include<calculus.hpp>
+#include <iostream>
+#include "calculus.hpp"
 using namespace std;
 int main(){
     cout << "teste conversão de tempo" <<endl;

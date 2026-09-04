@@ -4,7 +4,8 @@ C: Capital (o valor inicial emprestado ou investido).
 i: Taxa de juros (o percentual cobrado por período, usado em formato decimal, como 5% = 0,05).
 t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 
-#include <bits/stdc++.h>
+#ifndef CALCULUS_HPP
+#define CALCULUS_HPP
 using namespace std;
 
 typedef struct tempo{
@@ -18,3 +19,5 @@ double valor_final(double valor_inicial, double taxa, double tempo);
 double valor_presente(double valor_final, struct tempo periodo);
 double taxa(double valor_inicial, double valor_final, struct tempo perido);
 double tempo(double valor_inicial, double valor_final, double taxa);
+
+#endif

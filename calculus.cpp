@@ -4,8 +4,7 @@ C: Capital (o valor inicial emprestado ou investido).
 i: Taxa de juros (o percentual cobrado por período, usado em formato decimal, como 5% = 0,05).
 t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 
-#include <bits/stdc++.h>
-#include <calculus.hpp>
+#include "calculus.hpp"
 using namespace std;
 
 double converter_tempo(struct tempo periodo, double taxa){
