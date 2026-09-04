@@ -8,11 +8,11 @@ t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 #define CALCULUS_HPP
 using namespace std;
 
-typedef struct tempo{
+struct tempo{
     int dias = 0;
     int meses = 0; 
     int anos = 0;
-} tempo;
+};
 
 double converter_tempo(struct tempo periodo);
 double valor_final(double valor_inicial, double taxa, double tempo);
