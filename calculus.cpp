@@ -35,5 +35,5 @@ double taxa(double valor_inicial, double valor_final, double periodo){
 }
 
 double tempo(double valor_inicial, double valor_final, double taxa){
-    
+
 }
