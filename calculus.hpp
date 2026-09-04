@@ -8,13 +8,13 @@ t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 using namespace std;
 
 typedef struct tempo{
-    int dias;
-    int meses; 
-    int anos;
+    int dias = 0;
+    int meses = 0; 
+    int anos = 0;
 } tempo;
 
-double converter_tempo(struct tempo periodo, double taxa);
-double valor_final(double valor_inicial, double taxa);
+double converter_tempo(struct tempo periodo);
+double valor_final(double valor_inicial, double taxa, double tempo);
+double valor_presente(double valor_final, struct tempo periodo);
 double taxa(double valor_inicial, double valor_final, struct tempo perido);
 double tempo(double valor_inicial, double valor_final, double taxa);
-double valor_presente(double valor_final, struct tempo periodo);

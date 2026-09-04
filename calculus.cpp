@@ -8,25 +8,32 @@ t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 #include <calculus.hpp>
 using namespace std;
 
-//juros simples
 double converter_tempo(struct tempo periodo, double taxa){
     //a unidade base vai ser meses
     double tempo_convertido = 0.0;
     return tempo_convertido;
 }
 
-double valor_final(){
+//juros simples
+double converter_tempo(struct tempo periodo, double taxa){
     
 }
 
-double taxa(){
-
+double valor_final(double valor_inicial, double taxa, double periodo){
+    double valor_final = valor_inicial*(1 + taxa * periodo);
+    return valor_final;
 }
 
-double tempo(){
-
+double valor_presente(double valor_final, double taxa, double periodo){
+    double valor_presente = valor_final / (1 +  taxa* periodo);
+    return valor_presente;
 }
 
-double valor_presente(){
+double taxa(double valor_inicial, double valor_final, double periodo){
+    double taxa = (valor_final / valor_inicial - 1) / periodo;
+    return taxa;
+}
 
+double tempo(double valor_inicial, double valor_final, double taxa){
+    
 }
