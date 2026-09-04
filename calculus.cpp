@@ -14,17 +14,35 @@ double converter_tempo(struct tempo periodo, double taxa){
 }
 
 //juros simples
-double converter_tempo(struct tempo periodo, double taxa){
-    
+
+double converter_taxa_mes(struct taxa indice){
+    if(indice.dia){
+        double indice_convertido = indice.dia * 30;
+        return indice_convertido;
+    } 
+
+    else if(indice.ano){
+        double indice_convertidp = indice.ano / 360;
+    }
+
+    else return indice.mes;
 }
 
-double valor_final(double valor_inicial, double taxa, double periodo){
-    double valor_final = valor_inicial*(1 + taxa * periodo);
+double converter_tempo(struct tempo periodo){ 
+    //converter para a base de meses
+    double anos_meses = periodo.anos / 12;
+    double meses_dias = periodo.dias * 30;
+    double total = anos_meses + meses_dias + periodo.meses;
+    return total;
+}
+
+double valor_final(double valor_inicial, double indice, double periodo){
+    double valor_final = valor_inicial * (1 + indice * periodo);
     return valor_final;
 }
 
-double valor_presente(double valor_final, double taxa, double periodo){
-    double valor_presente = valor_final / (1 +  taxa* periodo);
+double valor_presente(double valor_final, double indice, double periodo){
+    double valor_presente = valor_final / (1 + indice * periodo);
     return valor_presente;
 }
 
@@ -33,6 +51,7 @@ double taxa(double valor_inicial, double valor_final, double periodo){
     return taxa;
 }
 
-double tempo(double valor_inicial, double valor_final, double taxa){
-
+double tempo(double valor_inicial, double valor_final, double indice){
+    double tempo = (valor_final/valor_inicial - 1) / indice;
+    return tempo;
 }

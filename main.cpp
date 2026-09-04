@@ -12,5 +12,9 @@ int main(){
     periodo.meses = meses;
     periodo.anos = anos;
 
-    cout << "teste de conversao de tempo na base de anos" << endl;
+    cout << "teste de conversao de tempo na base de meses" << endl;
+    cout << "dias || meses || anos: " << endl;
+    cout << periodo.dias << " " << periodo.meses << " " << periodo.anos <<endl;
+
+    
 }
