@@ -1,9 +1,3 @@
-/*A fórmula básica para calcular o valor dos juros simples é J = C × i × t. [1] 
-O Significado de Cada LetraJ: Juros (o valor total que será pago ou recebido).
-C: Capital (o valor inicial emprestado ou investido).
-i: Taxa de juros (o percentual cobrado por período, usado em formato decimal, como 5% = 0,05).
-t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
-
 #include "calculus.hpp"
 #include <iostream>
 #include <cmath>
@@ -78,8 +72,46 @@ void menu(){
             << meses << " meses e "
             <<dias << " dias" << endl;
             break;
-
             
+        }
+        
+        case 3:{
+            cout << "Informe o valor final:\n";
+            double valor_final; cin >> valor_final;
+
+            struct taxa indice;
+            cout << "Informe a taxa (%)";
+            double taxa; cin >> taxa;
+
+            indice.percentual = taxa / 100;
+
+            cout << "1. Ao dia \n2. Ao mes \n3. Ao ano\n";
+            int op; cin >> op;
+
+            if(op == 1) indice.dia = true;
+            else if(op == 2) indice.mes = true;
+            else indice.ano = true;
+
+            struct tempo periodo;
+            cout << "Informe o tempo:\n";
+
+            cout << "Anos: ";
+            cin >> periodo.anos;
+
+            cout << "Meses: ";
+            cin >> periodo.meses;
+
+            cout << "Dias: ";
+            cin >> periodo.dias;
+
+            double tempo = converter_tempo(periodo);
+            taxa = converter_taxa(indice);
+
+            double valor_init = valor_presente(valor_final, taxa, tempo);
+
+            cout << "O valor inicial foi de " << valor_init << " reais"<<endl;
+
+            break;
         }
         default:
             break;
