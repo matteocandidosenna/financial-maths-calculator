@@ -113,6 +113,44 @@ void menu(){
 
             break;
         }
+        
+        case 4:{
+            cout << "Informe o valor inicial:\n";
+            double valor_inicial; cin >> valor_inicial;
+
+            struct taxa indice;
+            cout << "Informe a taxa (%)";
+            double taxa; cin >> taxa;
+
+            indice.percentual = taxa / 100;
+
+            cout << "1. Ao dia \n2. Ao mes \n3. Ao ano\n";
+            int op; cin >> op;
+
+            if(op == 1) indice.dia = true;
+            else if(op == 2) indice.mes = true;
+            else indice.ano = true;
+
+            struct tempo periodo;
+            cout << "Informe o tempo:\n";
+
+            cout << "Anos: ";
+            cin >> periodo.anos;
+
+            cout << "Meses: ";
+            cin >> periodo.meses;
+
+            cout << "Dias: ";
+            cin >> periodo.dias;
+
+            double tempo = converter_tempo(periodo);
+            taxa = converter_taxa(indice);
+
+
+            double vf = valor_final(valor_inicial, taxa,tempo);
+            cout << "O valor final foi de " << vf << " reais"<<endl;
+            break;
+        }
         default:
             break;
         }
