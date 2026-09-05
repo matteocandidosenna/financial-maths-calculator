@@ -7,30 +7,27 @@ t: Tempo (o período em que o dinheiro fica aplicado ou emprestado).*/
 #include "calculus.hpp"
 using namespace std;
 
-double converter_tempo(struct tempo periodo){
-    //a unidade base vai ser meses
-    double periodo_convertido = 0.0;
-}
-
 //primeira parte juros simples
 double converter_taxa_mes(struct taxa indice){
     //a unidade base será meses
-    if(indice.dia){
-        double indice_convertido = indice.dia * 30;
+    if(indice.dia){ //dia para mes
+        double indice_convertido = indice.percentual * 30;
         return indice_convertido;
     } 
 
-    else if(indice.ano){
-        double indice_convertidp = indice.ano / 360;
+    else if(indice.ano){ //ano para mes
+        double indice_convertido = indice.percentual / 12;
+        return indice_convertido;
     }
 
-    else return indice.mes;
+    else return indice.percentual;
 }
+
 
 double converter_tempo(struct tempo periodo){ 
     //converter para a base de meses
-    double anos_meses = periodo.anos / 12;
-    double meses_dias = periodo.dias * 30;
+    double anos_meses = periodo.anos * 12.0;
+    double meses_dias = periodo.dias / 30.0;
     double total = anos_meses + meses_dias + periodo.meses;
     return total;
 }
