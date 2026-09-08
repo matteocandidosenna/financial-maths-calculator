@@ -201,3 +201,7 @@ double calcular_tempo(double valor_inicial, double valor_final, double indice){
     double tempo = (valor_final/valor_inicial - 1) / indice;
     return tempo;
 }
+
+double desconto_simples(){
+    return 0;
+}
