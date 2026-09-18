@@ -22,6 +22,7 @@ double valor_final(double valor_inicial, double indice, double periodo);
 double valor_presente(double valor_final, double indice, double periodo);
 double calcular_taxa(double valor_inicial, double valor_final, double periodo);
 double calcular_tempo(double valor_inicial, double valor_final, double indice);
-double desconto_simples();
+double desconto_comercial(double valor_inicial, double taxa, double tempo);
+double calcular_taxa_efetiva(double valor_inicial, double desconto_comercial, double tempo);
 
 #endif
